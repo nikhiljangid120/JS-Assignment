@@ -15,24 +15,29 @@ const firstNames = members.map(
 console.log(firstNames)
 
 
-// 2 -> Doubt
-const upCase = members.map(member => {
-  const nameParts = member.name.split(' ');
+// 2
 
-  if (nameParts.length > 1) {
-    const firstName = nameParts[0];
-    const lastName = nameParts[1].toUpperCase();
+const res = members.map(member => {
+  const value = member.name.split(' ')
+  value[1] = value[1].toUpperCase()
 
-    return {
-      ...member,
-      name: `${firstName} ${lastName}`
-    };
+  return {
+    ...member,
+    name: value.join(' ')
   }
+})
 
-  return member;
-});
+console.log("Uppercase last name", res);
 
-console.log("2.", upCase);
+const res2 = members.map(member => {
+  const value2 = member.name.split(' ')
+  value2[0] = value2[0].toUpperCase()
+  return {
+    ...member,
+    name: value2.join(' ')
+  }
+})
+console.log("Uppercase first name", res2)
 
 
 // 3
@@ -166,7 +171,7 @@ const memberAgeObject = members.reduce(
 
 console.log("14B.", memberAgeObject);
 
-// First naem uppercase
+// First name uppercase
 const result = members.map(member => {
   const parts = member.name.split(' ');
 
