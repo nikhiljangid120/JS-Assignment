@@ -9,11 +9,13 @@ const members = [
 ];
 
 // 1
-const firstNames = members.map(member => member.name.split(' ')[0]);
-console.log('1. First Names ->', firstNames);
+const firstNames = members.map(
+ member => member.name.split(' ')[0]
+);
+console.log(firstNames)
 
 
-// 2
+// 2 -> Doubt
 const upCase = members.map(member => {
   const nameParts = member.name.split(' ');
 
@@ -42,16 +44,16 @@ console.log("3.", ages);
 
 
 // 4.
-const validAgeMembers = members.filter(
+const validAge = members.filter(
   member => member.age !== undefined
 );
 
-const totalAge = validAgeMembers.reduce(
+const totalAge = validAge.reduce(
   (sum, member) => sum + member.age,
   0
 );
 
-const averageAge = totalAge / validAgeMembers.length;
+const averageAge = totalAge / validAge.length;
 
 console.log("4.", averageAge);
 
@@ -97,10 +99,10 @@ console.log("7.", members);
 
 
 // 8.
-const [firstElement, secondElement] = members;
+const [a, b] = members;
 
-console.log("8.", firstElement);
-console.log(secondElement);
+console.log("8.", a);
+console.log(b);
 
 // 9.
 const newMembArray = [
@@ -138,7 +140,7 @@ console.log(remainingProperties);
 // 13.
 const updatedPerson = {
   ...person,
-  age: 30
+  age: 50
 };
 
 console.log("13.", updatedPerson);
@@ -163,3 +165,17 @@ const memberAgeObject = members.reduce(
 );
 
 console.log("14B.", memberAgeObject);
+
+// First naem uppercase
+const result = members.map(member => {
+  const parts = member.name.split(' ');
+
+  parts[0] = parts[0].toUpperCase();
+
+  return {
+    ...member,
+    name: parts.join(' ')
+  };
+});
+
+console.log(result);
