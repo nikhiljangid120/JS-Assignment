@@ -7,7 +7,6 @@ const members = [
   {name: 'Swpril Ahuja', age: 45},
   {name: 'Yogesh Khatri', age: 51}
 ];
-
 // 1
 const firstNames = members.map(
  member => member.name.split(' ')[0]
