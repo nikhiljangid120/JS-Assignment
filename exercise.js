@@ -38,7 +38,6 @@ const res2 = members.map(member => {
 })
 console.log("Uppercase first name", res2)
 
-
 // 3
 const ages = members.filter(
   member => member.age >= 41 && member.age <= 60
