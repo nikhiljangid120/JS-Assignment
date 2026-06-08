@@ -13,7 +13,6 @@ const firstNames = members.map(
 );
 console.log(firstNames)
 
-
 // 2
 
 const res = members.map(member => {
